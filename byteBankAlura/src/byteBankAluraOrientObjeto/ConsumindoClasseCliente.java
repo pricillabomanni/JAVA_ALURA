@@ -6,20 +6,20 @@ public class ConsumindoClasseCliente {
 		
 		Cliente pricilla = new Cliente();
 		
-		pricilla.nome="Pricilla Bomanni";
-		pricilla.cpf = "123.234.345-45";
-		pricilla.profissao = "Programadora";
+		pricilla.setNome("Pricilla Bomanni");
+		pricilla.setCpf("123.234.345-45");
+		pricilla.setProfissao("Programadora");
 		
-		Conta contaDaPri = new Conta();
+		Conta contaDaPri = new Conta(25,90);
 		contaDaPri.deposita(200);
 		
 		//associação da contaDaPri com o titular pricilla;
-		contaDaPri.titular = pricilla;
+		contaDaPri.setTitular(pricilla);
 				
-		System.out.println(contaDaPri.titular.nome);
-		System.out.println(contaDaPri.titular.profissao);
-		System.out.println(contaDaPri.titular.cpf);
-		System.out.println(contaDaPri.saldo);
+		System.out.println(contaDaPri.getTitular().getNome());
+		System.out.println(contaDaPri.getTitular().getProfissao());
+		System.out.println(contaDaPri.getTitular().getCpf());
+		System.out.println(contaDaPri.getSaldo());
 
 	}
 

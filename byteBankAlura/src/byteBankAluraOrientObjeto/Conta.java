@@ -1,15 +1,26 @@
 package byteBankAluraOrientObjeto;
 
 public class Conta {
-	double saldo;
-	int agencia;
-	int numero;
-	Cliente titular;
+	private double saldo;
+	private int agencia;
+	private int numero;
+	private Cliente titular;
+	private static int total = 0;
 	
+	public Conta(int agencia, int numero) {
+		Conta.total++;
+		System.out.println("O total de contas abertas " + Conta.total);
+		this.agencia = agencia;
+		this.numero = numero;
+				
+	}
 	
+	public static int getTotal() {
+		return Conta.total;
+	}
 	
 	public double getSaldo() {
-		return saldo;
+		return this.saldo;
 	}
 
 	public void setSaldo(double saldo) {
@@ -21,6 +32,10 @@ public class Conta {
 	}
 
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Nao pode valor menor igual a 0");
+			return;
+		}
 		this.agencia = agencia;
 	}
 
