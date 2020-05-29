@@ -7,7 +7,7 @@ public class ConsumindoClassesComPolimorfismo {
 		g.setNome("Prig");
 		g.setSalario(6000.0);
 
-		Funcionario f = new Funcionario();
+		Funcionario f = new EditorDeVideo();
 		f.setNome("Pri2f");
 		f.setSalario(2000.0);
 

@@ -1,10 +1,10 @@
 
-public class Conta {
+public abstract class Conta {
 	
-	private double saldo;
+	protected double saldo;
     private int agencia;
     private int numero;
-    private Cliente titular;
+    //private Cliente titular;
     private static int total = 0;
 
     public Conta(int agencia, int numero){
@@ -12,11 +12,11 @@ public class Conta {
         System.out.println("O total de contas é " + Conta.total);
         this.agencia = agencia;
         this.numero = numero;
-        this.saldo = 100;
+        this.saldo = 0;
         System.out.println("Estou criando uma conta " + this.numero);
     }
 
-    public void deposita(double valor) {
+    public abstract void deposita(double valor) {
         this.saldo = this.saldo + valor;
     }
 
@@ -66,13 +66,13 @@ public class Conta {
        this.agencia = agencia;
     }
 
-    public void setTitular(Cliente titular){
-        this.titular = titular;
-    }
-
-    public Cliente getTitular(){
-        return this.titular;
-    }
+    // public void setTitular(Cliente titular){
+    //   this.titular = titular;
+    // }
+//
+  //  public Cliente getTitular(){
+    //      return this.titular;
+    //}
 
     public static int getTotal(){
         return Conta.total;
